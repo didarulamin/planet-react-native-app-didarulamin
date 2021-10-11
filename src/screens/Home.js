@@ -48,7 +48,7 @@ const Home = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Header></Header>
 
       <View>
@@ -67,7 +67,7 @@ const Home = ({ navigation }) => {
           )}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

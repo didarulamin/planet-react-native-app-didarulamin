@@ -1,13 +1,16 @@
 import React from "react";
-import {
-  Image,
-  StyleSheet,
-  View,
-  ScrollView,
-  Linking,
-  Pressable,
-} from "react-native";
+import { StyleSheet, View, ScrollView, Linking, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import {
+  Earth,
+  Mars,
+  Mercury,
+  Saturn,
+  Venus,
+  Neptune,
+  Uranus,
+  Jupiter,
+} from "../../assets/SVGComponents/indexsvg";
 import Header from "../components/Header/Header";
 import Text from "../components/text/text";
 import { spacing } from "./../theme/spacing";
@@ -25,11 +28,35 @@ const Details = ({ route }) => {
     wikiLink,
   } = planet;
 
+  const getSVG = (name) => {
+    switch (name) {
+      case "earth":
+        return <Earth />;
+      case "mars":
+        return <Mars />;
+      case "mercury":
+        return <Mercury />;
+      case "neptune":
+        return <Neptune />;
+      case "saturn":
+        return <Saturn />;
+      case "venus":
+        return <Venus />;
+      case "jupiter":
+        return <Jupiter />;
+      case "uranus":
+        return <Uranus />;
+    }
+  };
+
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Header></Header>
       <ScrollView>
-        <Image source={surfaceImage} style={{ alignSelf: "center" }}></Image>
+        <View style={{ flex: 1, alignItems: "center", marginTop: 10 }}>
+          {getSVG(name)}
+        </View>
+
         <Text
           preset="h1"
           style={{
@@ -135,7 +162,7 @@ const Details = ({ route }) => {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
