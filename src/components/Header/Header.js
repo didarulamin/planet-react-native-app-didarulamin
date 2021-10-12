@@ -3,6 +3,7 @@ import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { spacing, colors } from "../../theme";
 import Text from "../text/text";
+import { StatusBar } from "expo-status-bar";
 
 const Header = () => {
   return (

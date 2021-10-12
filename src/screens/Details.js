@@ -14,8 +14,9 @@ import {
 import Header from "../components/Header/Header";
 import Text from "../components/text/text";
 import { spacing } from "./../theme/spacing";
+import { StatusBar } from "expo-status-bar";
 
-const Details = ({ route }) => {
+const Details = ({ route, navigation }) => {
   const { planet } = route.params;
   const {
     name,
@@ -81,7 +82,7 @@ const Details = ({ route }) => {
           }}
         >
           <Text>Source: </Text>
-          <Pressable onPress={() => Linking.openURL(wikiLink)}>
+          <Pressable onPress={() => navigation.navigate("Web", { wikiLink })}>
             <Text style={{ textDecorationLine: "underline" }}>Wikipedia</Text>
           </Pressable>
         </View>
@@ -162,6 +163,7 @@ const Details = ({ route }) => {
           </View>
         </View>
       </ScrollView>
+      <StatusBar barStyle="dark-content" />
     </SafeAreaView>
   );
 };

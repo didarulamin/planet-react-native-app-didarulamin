@@ -8,6 +8,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./src/screens/Home";
 import Details from "./src/screens/Details";
+import Web from "./src/screens/Web.js";
 
 export default function App() {
   let [fontsLoaded, error] = useFonts({
@@ -31,6 +32,12 @@ export default function App() {
           <Stack.Screen
             name="Details"
             component={Details}
+            options={{ headerShown: false }}
+          />
+
+          <Stack.Screen
+            name="Web"
+            component={Web}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
