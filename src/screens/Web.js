@@ -11,8 +11,8 @@ export default function Web({ route }) {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <Header></Header>
       <WebView source={{ uri: wikiLink }} />
-      <StatusBar barStyle="black" />
     </SafeAreaView>
   );
 }

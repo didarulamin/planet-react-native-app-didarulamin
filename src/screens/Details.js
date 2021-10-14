@@ -15,6 +15,7 @@ import Header from "../components/Header/Header";
 import Text from "../components/text/text";
 import { spacing } from "./../theme/spacing";
 import { StatusBar } from "expo-status-bar";
+import { colors } from "./../theme/colors";
 
 const Details = ({ route, navigation }) => {
   const { planet } = route.params;
@@ -69,7 +70,12 @@ const Details = ({ route, navigation }) => {
           {name}
         </Text>
         <Text
-          style={{ textAlign: "center", marginTop: spacing[4], fontSize: 18 }}
+          style={{
+            textAlign: "center",
+            marginTop: spacing[4],
+            fontSize: 18,
+            margin: spacing[5],
+          }}
         >
           {description}
         </Text>
@@ -83,7 +89,14 @@ const Details = ({ route, navigation }) => {
         >
           <Text>Source: </Text>
           <Pressable onPress={() => navigation.navigate("Web", { wikiLink })}>
-            <Text style={{ textDecorationLine: "underline" }}>Wikipedia</Text>
+            <Text
+              style={{
+                textDecorationLine: "underline",
+                color: colors.white,
+              }}
+            >
+              Wikipedia
+            </Text>
           </Pressable>
         </View>
 
@@ -104,7 +117,7 @@ const Details = ({ route, navigation }) => {
               Rotation Time
             </Text>
             <Text preset="h2" style={{ textTransform: "uppercase" }}>
-              {rotationTime}
+              {rotationTime} DAYS/Hours
             </Text>
           </View>
           <View
@@ -140,7 +153,7 @@ const Details = ({ route, navigation }) => {
               Radius
             </Text>
             <Text preset="h2" style={{ textTransform: "uppercase" }}>
-              {radius}
+              {radius} KM
             </Text>
           </View>
           <View
@@ -163,7 +176,6 @@ const Details = ({ route, navigation }) => {
           </View>
         </View>
       </ScrollView>
-      <StatusBar barStyle="dark-content" />
     </SafeAreaView>
   );
 };
