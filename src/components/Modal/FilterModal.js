@@ -18,9 +18,11 @@ const FilterModal = ({
   resetFilter,
   modalVisible,
   setModalVisible,
+  rotationTime,
+  setRotationTime,
+  radius,
+  setRadius,
 }) => {
-  const [rotationTime, setRotationTime] = React.useState([0, 500]);
-  const [radius, setRadius] = React.useState([5000, 15000]);
   const { height, width } = useWindowDimensions();
 
   const onPressFilter = () => {

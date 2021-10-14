@@ -19,6 +19,8 @@ import FilterModal from "../components/Modal/FilterModal";
 const Home = ({ navigation }) => {
   const [data, setData] = React.useState(PLANET_LIST);
   const [modalVisible, setModalVisible] = React.useState(false);
+  const [rotationTime, setRotationTime] = React.useState([0, 500]);
+  const [radius, setRadius] = React.useState([5000, 15000]);
   const { height, width } = useWindowDimensions();
 
   const filterData = (text) => {
@@ -44,6 +46,8 @@ const Home = ({ navigation }) => {
 
   const resetFilter = () => {
     setData(PLANET_LIST);
+    setRotationTime([0, 500]);
+    setRadius([5000, 15000]);
   };
 
   const renderItem = ({ item, index }) => {
@@ -127,6 +131,10 @@ const Home = ({ navigation }) => {
         resetFilter={resetFilter}
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
+        rotationTime={rotationTime}
+        setRotationTime={setRotationTime}
+        radius={radius}
+        setRadius={setRadius}
       />
     </View>
   );
